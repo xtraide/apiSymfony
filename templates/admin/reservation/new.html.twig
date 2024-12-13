@@ -1,0 +1,13 @@
+{# filepath: /D:/wamp64/www/iut/apiSymfony/templates/admin/reservation/new.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Create Reservation</h1>
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<button type="submit">Save</button>
+{{ form_end(form) }}
+
+<a href="{{ path('admin_reservation_index') }}">Back to list</a>
+{% endblock %}

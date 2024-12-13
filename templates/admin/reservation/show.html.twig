@@ -1,0 +1,56 @@
+{# filepath: /D:/wamp64/www/iut/apiSymfony/templates/admin/reservation/show.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Reservation</h1>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <td>{{ reservation.date|date('Y-m-d') }}</td>
+    </tr>
+    <tr>
+        <th>Time Slot</th>
+        <td>{{ reservation.timeSlot|date('H:i') }}</td>
+    </tr>
+    <tr>
+        <th>Event Name</th>
+        <td>{{ reservation.eventName }}</td>
+    </tr>
+    <tr>
+        <th>User</th>
+        <td>{{ reservation.user.email }}</td>
+    </tr>
+</table>
+
+<a href="{{ path('admin_reservation_index') }}">Back to list</a>
+<a href="{{ path('admin_reservation_edit', {'id': reservation.id}) }}">Edit</a>
+<form method="post" action="{{ path('admin_reservation_delete', {'id': reservation.id}) }}"
+    style="display:inline-block;">
+    <input type="hidden" name{# filepath: /D:/wamp64/www/iut/apiSymfony/templates/admin/reservation/show.html.twig #} {%
+        extends 'base.html.twig' %} {% block body %} <h1>Reservation</h1>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <td>{{ reservation.date|date('Y-m-d') }}</td>
+        </tr>
+        <tr>
+            <th>Time Slot</th>
+            <td>{{ reservation.timeSlot|date('H:i') }}</td>
+        </tr>
+        <tr>
+            <th>Event Name</th>
+            <td>{{ reservation.eventName }}</td>
+        </tr>
+        <tr>
+            <th>User</th>
+            <td>{{ reservation.user.email }}</td>
+        </tr>
+    </table>
+
+    <a href="{{ path('admin_reservation_index') }}">Back to list</a>
+    <a href="{{ path('admin_reservation_edit', {'id': reservation.id}) }}">Edit</a>
+    <form method="post" action="{{ path('admin_reservation_delete', {'id': reservation.id}) }}"
+        style="display:inline-block;">
+        <input type="hidden" name

@@ -1,0 +1,10 @@
+{# filepath: /D:/wamp64/www/iut/apiSymfony/templates/user/dashboard.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>User Dashboard</h1>
+<ul>
+    <li><a href="{{ path('user_reservation_index') }}">My Reservations</a></li>
+    <li><a href="{{ path('user_reservation_new') }}">Create New Reservation</a></li>
+</ul>
+{% endblock %}

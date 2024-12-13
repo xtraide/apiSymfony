@@ -1,0 +1,32 @@
+{# filepath: /D:/wamp64/www/iut/apiSymfony/templates/admin/user/show.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>User</h1>
+
+<table>
+    <tr>
+        <th>Email</th>
+        <td>{{ user.email }}</td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td>{{ user.name }}</td>
+    </tr>
+    <tr>
+        <th>Phone Number</th>
+        <td>{{ user.phoneNumber }}</td>
+    </tr>
+    <tr>
+        <th>Roles</th>
+        <td>{{ user.roles|join(', ') }}</td>
+    </tr>
+</table>
+
+<a href="{{ path('admin_user_index') }}">Back to list</a>
+<a href="{{ path('admin_user_edit', {'id': user.id}) }}">Edit</a>
+<form method="post" action="{{ path('admin_user_delete', {'id': user.id}) }}" style="display:inline-block;">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+    <button type="submit">Delete</button>
+</form>
+{% endblock %}

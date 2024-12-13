@@ -1,0 +1,28 @@
+{# filepath: /D:/wamp64/www/iut/apiSymfony/templates/user/reservation/show.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Reservation</h1>
+
+<table>
+    <tr>
+        <th>Date</th>
+        <td>{{ reservation.date|date('Y-m-d H:i') }}</td>
+    </tr>
+    <tr>
+        <th>Time Slot</th>
+        <td>{{ reservation.timeSlot|date('H:i') }}</td>
+    </tr>
+    <tr>
+        <th>Event Name</th>
+        <td>{{ reservation.eventName }}</td>
+    </tr>
+</table>
+
+<a href="{{ path('user_reservation_index') }}">Back to list</a>
+<form method="post" action="{{ path('user_reservation_delete', {'id': reservation.id}) }}"
+    style="display:inline-block;">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ reservation.id) }}">
+    <button type="submit">Delete</button>
+</form>
+{% endblock %}

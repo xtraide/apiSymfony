@@ -1,0 +1,10 @@
+{# filepath: /D:/wamp64/www/iut/apiSymfony/templates/admin/dashboard.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Admin Dashboard</h1>
+<ul>
+    <li><a href="{{ path('admin_user_index') }}">Manage Users</a></li>
+    <li><a href="{{ path('admin_reservation_index') }}">Manage Reservations</a></li>
+</ul>
+{% endblock %}
